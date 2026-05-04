@@ -2,11 +2,11 @@ import { css } from "@emotion/css";
 
 export const header = css`
   width: 100%;
-  background: black;
+  background: rgb(0, 0, 0);
+  backdrop-filter: blur(10px);
   color: white;
-  border-radius: 5px;
   position: sticky;
-  top: 0;              /* ⭐ important */
+  top: 0;
   z-index: 100;
 `;
 
@@ -14,11 +14,11 @@ export const container = css`
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  padding: 10px 80px;
+  padding: 12px 80px;
 `;
 
 export const logoSection = css`
-  display: flex;          /* ⭐ fix alignment */
+  display: flex;
   align-items: center;
   gap: 10px;
   justify-self: start;
@@ -29,8 +29,8 @@ export const logoSection = css`
 `;
 
 export const logoText = css`
-  font-size: 12px;
-  line-height: 1.2;
+  font-size: 16px;
+  color: yellow;
 `;
 
 export const detailing = css`
@@ -45,19 +45,82 @@ export const navWrapper = css`
 export const navBars = css`
   display: flex;
   list-style: none;
-  gap: 70px;
+  gap: 60px;
 
   li a {
     color: white;
     text-decoration: none;
     font-weight: 500;
+    transition: 0.3s;
   }
 
   li a:hover {
-    color: #00bfff;
+    color: #e5ff00;
   }
 `;
 
-export const rightSection = css`
-  justify-self: end;
+ export const rightSection = css`
+   justify-self: end;
+ `;
+export const navItem = css`
+  position: relative;
+`;
+
+export const underline = css`
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #e5ff00;
+  border-radius: 2px;
+`;
+
+
+export const contactbtn = css`
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 12px 26px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #fff;
+
+  border: 2px solid #f5a623;
+  text-decoration: none;
+
+  position: relative;
+  overflow: hidden;
+  clip-path: polygon(0 0, 88% 0, 100% 50%, 88% 100%, 0 100%);
+
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: #000;
+    background: #f5a623;
+  }
+  &:hover {
+    box-shadow: 0 0 15px rgba(245, 166, 35, 0.6);
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.2);
+    transform: skewX(-20deg);
+    transition: 0.5s;
+  }
+
+  &:hover::before {
+    left: 120%;
+  }
+`;
+
+export const icon = css`
+  font-size: 18px;
 `;
