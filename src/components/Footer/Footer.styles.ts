@@ -11,7 +11,7 @@ export const container = css`
   margin: auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
+  gap: 80px;
 `;
 
 export const col = css`
@@ -27,7 +27,7 @@ export const col = css`
   li {
     position: relative;
     padding-left: 15px;
-    margin-bottom: 18px; /* FIXED */
+    margin-bottom: 28px; /* FIXED */
     color: #ccc;
   }
 
@@ -61,6 +61,7 @@ export const whatsapp = css`
   padding: 10px;
   color: white;
   text-decoration: none;
+  margin-top:25px;
 `;
 
 export const social = css`
