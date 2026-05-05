@@ -41,6 +41,8 @@ export const right = css`
 
   p {
     margin-bottom: 20px;
+    line-height:1.8;
+    margin
   }
 `;
 
@@ -54,4 +56,32 @@ export const bgText = css`
   -webkit-text-stroke: 1px #ddd;
   z-index: 0;
   pointer-events: none;
+`;
+
+export const sec2p2 = css`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  padding: 80px 40px;
+`;
+
+export const secp2left = css`
+  display: flex;
+  align-items: center;
+
+  p{
+  font-size:36px;
+  font-weight:600px;
+  line-height:1.7;
+  max-width: 500px;
+  }
+`;
+
+export const secp2right = css`
+ img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+  }
 `;

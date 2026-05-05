@@ -57,11 +57,11 @@ export const phone = css`
 `;
 
 export const whatsapp = css`
-  background: #25D366;
+  background: #25d366;
   padding: 10px;
   color: white;
   text-decoration: none;
-  margin-top:25px;
+  margin-top: 25px;
 `;
 
 export const social = css`
@@ -71,9 +71,25 @@ export const social = css`
 
 export const newsletter = css`
   display: flex;
+
+  input {
+    padding: 12px 45px 12px 21px;
+    display: flex;
+    justify-content: center;
+    align-item: center;
+    border-radius: 5px 0 0 5px;
+  }
+  button {
+    background: #f55b23;
+    padding: 5px 20px 5px 20px;
+    border-radius: 0 5px 5px 0;
+    color:white;
+    font-weight:600;
+  }
 `;
 
 export const bottom = css`
   text-align: center;
   margin-top: 40px;
+  // background:#f5a623;
 `;

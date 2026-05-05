@@ -80,8 +80,8 @@ export default function Footer() {
           </div>
 
           <div className={styles.newsletter}>
-            <input type="email" placeholder="Enter your email" />
-            <button>Subscribe</button>
+            <input type="email" placeholder=" Email Address" />
+            <button>SUBSCRIBE</button>
           </div>
         </div>
 
