@@ -42,7 +42,6 @@ export const right = css`
   p {
     margin-bottom: 20px;
     line-height:1.8;
-    margin
   }
 `;
 
@@ -71,7 +70,7 @@ export const secp2left = css`
 
   p{
   font-size:36px;
-  font-weight:600px;
+  font-weight:600;
   line-height:1.7;
   max-width: 500px;
   }
@@ -83,5 +82,4 @@ export const secp2right = css`
   border-radius: 12px;
   box-shadow: 0 20px 40px rgba(0,0,0,0.2);
 }
-  }
 `;

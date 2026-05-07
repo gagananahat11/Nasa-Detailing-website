@@ -69,7 +69,7 @@ export default function Footer() {
           <h3>COMPANY ADDRESS</h3>
 
           <p>
-            GURUGRAM, HARYANA 122002
+            Location of detaing studio
           </p>
 
           <div className={styles.social}>

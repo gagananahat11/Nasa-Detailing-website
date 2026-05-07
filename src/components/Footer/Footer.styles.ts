@@ -3,7 +3,7 @@ import { css } from "@emotion/css";
 export const footer = css`
   background: #000;
   color: #fff;
-  padding: 60px 20px;
+  padding: 25px 20px;
 `;
 
 export const container = css`
@@ -17,7 +17,7 @@ export const container = css`
 export const col = css`
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 5px;
 
   ul {
     list-style: none;
@@ -27,7 +27,7 @@ export const col = css`
   li {
     position: relative;
     padding-left: 15px;
-    margin-bottom: 28px; /* FIXED */
+    margin-bottom: 18px;
     color: #ccc;
   }
 
@@ -61,7 +61,7 @@ export const whatsapp = css`
   padding: 10px;
   color: white;
   text-decoration: none;
-  margin-top: 25px;
+  margin-top: 15px;
 `;
 
 export const social = css`
@@ -76,20 +76,22 @@ export const newsletter = css`
     padding: 12px 45px 12px 21px;
     display: flex;
     justify-content: center;
-    align-item: center;
+    align-items: center;
     border-radius: 5px 0 0 5px;
+    margin-top: 40px;
   }
   button {
     background: #f55b23;
     padding: 5px 20px 5px 20px;
     border-radius: 0 5px 5px 0;
-    color:white;
-    font-weight:600;
+    color: white;
+    font-weight: 600;
+    margin-top: 40px;
   }
 `;
 
 export const bottom = css`
   text-align: center;
-  margin-top: 40px;
+  margin-top: 10px;
   // background:#f5a623;
 `;

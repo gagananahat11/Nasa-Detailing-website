@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { motion } from "framer-motion"; // ✅ added
 import {
   FaCarSide,
   FaGem,
@@ -49,7 +50,14 @@ const process = ["Inspect", "Correct", "Protect", "Deliver"];
 export default function ServicesPage() {
   return (
     <main className={styles.page}>
-      <section className={styles.hero}>
+      
+      {/* HERO */}
+      <motion.section
+        className={styles.hero}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+      >
         <div className={styles.breadcrumbs}>
           <Link href="/">HOME</Link>
           <span>/</span>
@@ -57,9 +65,16 @@ export default function ServicesPage() {
         </div>
         <p>Premium Vehicle Care</p>
         <h1>Our Services</h1>
-      </section>
+      </motion.section>
 
-      <section className={styles.intro}>
+      {/* INTRO */}
+      <motion.section
+        className={styles.intro}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
         <div>
           <span className={styles.eyebrow}>What We Do</span>
           <h2>Protection, restoration, and detailing built around your vehicle.</h2>
@@ -69,19 +84,34 @@ export default function ServicesPage() {
           careful inspection, professional products, and a finish-focused
           process.
         </p>
-      </section>
+      </motion.section>
 
+      {/* SERVICES */}
       <section className={styles.serviceGrid}>
         {services.map((service) => (
-          <article className={styles.card} key={service.title}>
+          <motion.article
+            className={styles.card}
+            key={service.title}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
             <div className={styles.icon}>{service.icon}</div>
             <h3>{service.title}</h3>
             <p>{service.text}</p>
-          </article>
+          </motion.article>
         ))}
       </section>
 
-      <section className={styles.process}>
+      {/* PROCESS */}
+      <motion.section
+        className={styles.process}
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
         <div>
           <span className={styles.eyebrow}>Our Process</span>
           <h2>Every job follows a clean, quality-first workflow.</h2>
@@ -89,23 +119,38 @@ export default function ServicesPage() {
 
         <div className={styles.steps}>
           {process.map((step, index) => (
-            <div className={styles.step} key={step}>
+            <motion.div
+              className={styles.step}
+              key={step}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+              viewport={{ once: true }}
+            >
               <span>{String(index + 1).padStart(2, "0")}</span>
               <h3>{step}</h3>
-            </div>
+            </motion.div>
           ))}
         </div>
-      </section>
+      </motion.section>
 
-      <section className={styles.cta}>
+      {/* CTA */}
+      {/* <motion.section
+        className={styles.cta}
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+      > */}
         <div>
-          <span className={styles.eyebrow}>Ready For A Detail?</span>
+          <span className={styles.eyebrow}>Ready For A Detailing ?</span>
           <h2>Book a service and give your vehicle the care it deserves.</h2>
         </div>
         <a href="https://wa.me/917298666600" target="_blank" rel="noreferrer">
           Chat on WhatsApp
         </a>
-      </section>
+      {/* </motion.section> */}
+
     </main>
   );
 }
