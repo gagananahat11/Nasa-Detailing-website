@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion"; // ✅ added
+import { motion } from "framer-motion";
 import {
   FaCarSide,
   FaGem,
@@ -50,8 +50,6 @@ const process = ["Inspect", "Correct", "Protect", "Deliver"];
 export default function ServicesPage() {
   return (
     <main className={styles.page}>
-      
-      {/* HERO */}
       <motion.section
         className={styles.hero}
         initial={{ opacity: 0 }}
@@ -67,7 +65,6 @@ export default function ServicesPage() {
         <h1>Our Services</h1>
       </motion.section>
 
-      {/* INTRO */}
       <motion.section
         className={styles.intro}
         initial={{ opacity: 0, y: 30 }}
@@ -86,7 +83,6 @@ export default function ServicesPage() {
         </p>
       </motion.section>
 
-      {/* SERVICES */}
       <section className={styles.serviceGrid}>
         {services.map((service) => (
           <motion.article
@@ -104,7 +100,6 @@ export default function ServicesPage() {
         ))}
       </section>
 
-      {/* PROCESS */}
       <motion.section
         className={styles.process}
         initial={{ opacity: 0, y: 40 }}
@@ -134,14 +129,13 @@ export default function ServicesPage() {
         </div>
       </motion.section>
 
-      {/* CTA */}
-      {/* <motion.section
+      <motion.section
         className={styles.cta}
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
-      > */}
+      >
         <div>
           <span className={styles.eyebrow}>Ready For A Detailing ?</span>
           <h2>Book a service and give your vehicle the care it deserves.</h2>
@@ -149,8 +143,7 @@ export default function ServicesPage() {
         <a href="https://wa.me/917298666600" target="_blank" rel="noreferrer">
           Chat on WhatsApp
         </a>
-      {/* </motion.section> */}
-
+      </motion.section>
     </main>
   );
 }

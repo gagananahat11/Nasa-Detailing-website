@@ -15,6 +15,16 @@ export const container = css`
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   padding: 12px 80px;
+
+  @media (max-width: 1100px) {
+    padding: 12px 32px;
+  }
+
+  @media (max-width: 820px) {
+    grid-template-columns: 1fr auto;
+    gap: 14px;
+    padding: 10px 18px;
+  }
 `;
 
 export const logoSection = css`
@@ -25,12 +35,25 @@ export const logoSection = css`
 
   img {
     height: 70px;
+    width: 70px;
+    object-fit: cover;
+  }
+
+  @media (max-width: 820px) {
+    img {
+      height: 54px;
+      width: 54px;
+    }
   }
 `;
 
 export const logoText = css`
   font-size: 16px;
   color: yellow;
+
+  @media (max-width: 520px) {
+    font-size: 13px;
+  }
 `;
 
 export const detailing = css`
@@ -40,12 +63,26 @@ export const detailing = css`
 
 export const navWrapper = css`
   justify-self: center;
+
+  @media (max-width: 820px) {
+    grid-column: 1 / -1;
+    width: 100%;
+    display: none;
+  }
+`;
+
+export const navOpen = css`
+  @media (max-width: 820px) {
+    display: block;
+  }
 `;
 
 export const navBars = css`
   display: flex;
   list-style: none;
   gap: 60px;
+  margin: 0;
+  padding: 0;
 
   li a {
     color: white;
@@ -57,10 +94,30 @@ export const navBars = css`
   li a:hover {
     color: #e5ff00;
   }
+
+  @media (max-width: 1100px) {
+    gap: 28px;
+  }
+
+  @media (max-width: 820px) {
+    flex-direction: column;
+    gap: 0;
+    padding: 8px 0 4px;
+
+    li a {
+      display: block;
+      padding: 14px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+  }
 `;
 
  export const rightSection = css`
    justify-self: end;
+
+   @media (max-width: 820px) {
+     display: none;
+   }
  `;
 export const navItem = css`
   position: relative;
@@ -76,6 +133,22 @@ export const underline = css`
   border-radius: 2px;
 `;
 
+export const menuButton = css`
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: transparent;
+  color: white;
+  font-size: 19px;
+  cursor: pointer;
+
+  @media (max-width: 820px) {
+    display: inline-flex;
+  }
+`;
 
 export const contactbtn = css`
   display: inline-flex;
@@ -118,6 +191,11 @@ export const contactbtn = css`
 
   &:hover::before {
     left: 120%;
+  }
+
+  @media (max-width: 1100px) {
+    padding: 10px 18px;
+    font-size: 13px;
   }
 `;
 

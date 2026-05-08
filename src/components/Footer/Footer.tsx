@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import {
   FaFacebookF,
   FaTwitter,
@@ -20,9 +21,14 @@ export default function Footer() {
       viewport={{ once: true }}
     >
       <div className={styles.container}>
-        
         <div className={styles.col}>
-          <img src="/logo.jpg" className={styles.logo} />
+          <Image
+            src="/logo.jpg"
+            alt="NASA Detailing Studio logo"
+            width={140}
+            height={140}
+            className={styles.logo}
+          />
 
           <p>
             We follow a strict quality-first approach, ensuring every service is
@@ -38,6 +44,7 @@ export default function Footer() {
           <a
             href="https://wa.me/917298666600"
             target="_blank"
+            rel="noreferrer"
             className={styles.whatsapp}
           >
             <FaWhatsapp /> Chat on WhatsApp
@@ -68,15 +75,21 @@ export default function Footer() {
         <div className={styles.col}>
           <h3>COMPANY ADDRESS</h3>
 
-          <p>
-            Location of detaing studio
-          </p>
+          <p>Location of detaing studio</p>
 
           <div className={styles.social}>
-            <a href="#"><FaFacebookF /></a>
-            <a href="#"><FaTwitter /></a>
-            <a href="#"><FaYoutube /></a>
-            <a href="#"><FaInstagram /></a>
+            <a href="#" aria-label="Facebook">
+              <FaFacebookF />
+            </a>
+            <a href="#" aria-label="Twitter">
+              <FaTwitter />
+            </a>
+            <a href="#" aria-label="YouTube">
+              <FaYoutube />
+            </a>
+            <a href="#" aria-label="Instagram">
+              <FaInstagram />
+            </a>
           </div>
 
           <div className={styles.newsletter}>
@@ -84,11 +97,10 @@ export default function Footer() {
             <button>SUBSCRIBE</button>
           </div>
         </div>
-
       </div>
 
       <div className={styles.bottom}>
-        © 2026 Detailing Studio. All rights reserved.
+        &copy; 2026 Detailing Studio. All rights reserved.
       </div>
     </motion.footer>
   );

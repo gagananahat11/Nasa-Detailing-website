@@ -1,10 +1,12 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import * as styles from "./Header.styles";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
 const links = [
   { name: "HOME", href: "/" },
   { name: "SERVICES", href: "/services" },
@@ -30,6 +32,7 @@ export default function Header() {
   const pathname = usePathname();
   const { scrollY } = useScroll();
   const [hidden, setHidden] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   // SCROLL DETECTION
   useMotionValueEvent(scrollY, "change", (latest) => {
@@ -57,7 +60,12 @@ export default function Header() {
           animate={{ x: 0, opacity: 1 }}
           transition={{ delay: 0.2 }}
         >
-          <img src="/logo.jpg" alt="logo" />
+          <Image
+            src="/logo.jpg"
+            alt="NASA Detailing Studio logo"
+            width={70}
+            height={70}
+          />
 
           <div className={styles.logoText}>
             <span className={styles.detailing}>
@@ -68,7 +76,18 @@ export default function Header() {
         </motion.div>
 
         {/* CENTER - MENU */}
-        <nav className={styles.navWrapper}>
+        <button
+          className={styles.menuButton}
+          type="button"
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          onClick={() => setMenuOpen((current) => !current)}
+        >
+          {menuOpen ? <FaTimes /> : <FaBars />}
+        </button>
+
+        <nav
+          className={`${styles.navWrapper} ${menuOpen ? styles.navOpen : ""}`}
+        >
           <motion.ul
             className={styles.navBars}
             variants={navVariants}
@@ -85,7 +104,9 @@ export default function Header() {
                   variants={itemVariants}
                   whileHover={{ scale: 1.1 }}
                 >
-                  <Link href={link.href}>{link.name}</Link>
+                  <Link href={link.href} onClick={() => setMenuOpen(false)}>
+                    {link.name}
+                  </Link>
 
                   {isActive && (
                     <motion.div

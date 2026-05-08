@@ -95,7 +95,7 @@ export default function Home() {
         </div>
       </main>
 
-<section className={styles.consultantBar}>
+      <section className={styles.consultantBar}>
   <div className={styles.container2}>
 
     <div className={styles.leftDiv}>
@@ -219,6 +219,61 @@ export default function Home() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+      <section className={styles.thirdSec}>
+        <div className={`${styles.container} ${styles.thirdContainer}`}>
+          <motion.div
+            className={styles.thirdImage}
+            initial={{ opacity: 0, x: -80 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+          ></motion.div>
+          <motion.div
+            className={styles.thirdRight}
+            initial={{ opacity: 0, x: 80 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <motion.h2
+              className={styles.thirdOutlineText}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.35 }}
+              viewport={{ once: true }}
+            >
+              DETAILING
+            </motion.h2>
+            <motion.h1
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.45 }}
+              viewport={{ once: true }}
+            >
+              Premium Detailing Services
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.55 }}
+              viewport={{ once: true }}
+            >
+              We provide professional paint protection, ceramic coating, and
+              complete detailing solutions for cars and bikes with long-lasting
+              finish and care.
+            </motion.p>
+            <motion.button
+              className={styles.serviceBtn}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.65 }}
+              viewport={{ once: true }}
+            >
+              OUR SERVICES
+            </motion.button>
+          </motion.div>
         </div>
       </section>
     </>
